@@ -1,0 +1,22 @@
+/* Display a table cell for address and manage how text overflow is handled */
+.address-cell {
+  max-width: 100px;
+  overflow: hidden;
+  white-space: nowrap; /* Default to truncating */
+  cursor: pointer; /* Indicate that the cell is clickable */
+  text-overflow: ellipsis;
+}
+
+/* Expand the address cell when the user clicks to see full content*/
+.address-cell.expanded {
+  white-space: normal; /* Allow text to wrap */
+  max-width: none; /* Remove width limitation */
+}
+
+/* Style a table cell that displays short content, like validity status */
+.validity-cell {
+  max-width: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

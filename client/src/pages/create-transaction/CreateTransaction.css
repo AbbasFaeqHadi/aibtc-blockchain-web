@@ -1,0 +1,11 @@
+.form-group {
+  margin-bottom: 20px; /* Consistent spacing between form groups */
+}
+
+.form-text {
+  margin-top: 5px; /* Spacing between the input field  */
+}
+
+.btn-primary {
+  margin-top: 1em;
+}

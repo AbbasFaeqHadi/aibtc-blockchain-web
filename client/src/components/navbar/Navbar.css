@@ -1,0 +1,13 @@
+.navbar-brand {
+  font-size: 20px;
+}
+
+.navbar div > a {
+  margin: 5px;
+}
+
+.navbar-logo {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+}

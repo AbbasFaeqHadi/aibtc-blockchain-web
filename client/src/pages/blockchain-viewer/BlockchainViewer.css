@@ -1,0 +1,7 @@
+.container-blocks {
+  /* 
+  Make container scrollable horizontally if the content exceeds the container's width
+  */
+  overflow-x: scroll;
+  white-space: nowrap;
+}
