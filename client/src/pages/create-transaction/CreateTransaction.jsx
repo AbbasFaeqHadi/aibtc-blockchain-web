@@ -30,6 +30,15 @@ const CreateTransaction = () => {
       return;
     }
 
+    if (fromAddress === toAddress) {
+      setAlert({
+        show: true,
+        title: "Error",
+        message: "From address and To address cannot be the same.",
+      });
+      return;
+    }
+
     const keyPair = ec.keyFromPrivate(privateKey);
     const publicKey = keyPair.getPublic("hex");
     const derivedAddress = await deriveAddressFromPublicKey(publicKey);

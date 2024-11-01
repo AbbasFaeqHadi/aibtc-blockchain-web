@@ -48,7 +48,6 @@ const startServer = async () => {
       const { rewardAddress } = req.body;
 
       try {
-
         if (!rewardAddress) {
           return res.status(400).json({
             success: false,
@@ -258,23 +257,39 @@ const startServer = async () => {
 
     // Update blockchain settings (difficulty, mining reward)
     app.post("/api/blockchain/settings", async (req, res) => {
-      const { difficulty, miningReward } = req.body;
+      let { difficulty, miningReward } = req.body;
+
+      difficulty = parseInt(difficulty, 10);
+      miningReward = parseInt(miningReward, 10);
+
+      // Validate that both difficulty and miningReward are numbers and non-negative
+      if (isNaN(difficulty) || isNaN(miningReward)) {
+        return res
+          .status(400)
+          .json({
+            error: "Difficulty and miningReward must be valid numbers.",
+          });
+      }
+      if (difficulty <= 0 || miningReward < 0) {
+        return res
+          .status(400)
+          .json({
+            error:
+              "Difficulty must be greater than zero, and miningReward cannot be negative.",
+          });
+      }
 
       try {
-        if (difficulty !== undefined) {
-          blockchainInstance.difficulty = difficulty;
-        }
-
-        if (miningReward !== undefined) {
-          blockchainInstance.miningReward = miningReward;
-        }
+        blockchainInstance.difficulty = difficulty;
+        blockchainInstance.miningReward = miningReward;
 
         res.status(200).json({
-          message: "Blockchain settings updated successfully",
+          message: "Blockchain settings updated successfully.",
         });
       } catch (error) {
+        console.error("Error updating blockchain settings:", error);
         res.status(500).json({
-          error: "Failed to update blockchain settings",
+          error: "Failed to update blockchain settings.",
           details: error.message,
         });
       }

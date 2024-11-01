@@ -76,7 +76,7 @@ The server is a Node.js application using Express.js and WebSocket for API handl
 
 Once the client and server are running:
 
-1. **Access the Homepage**: View blocks and recent transactions.
+1. **Access the Homepage**: View blocks and recent transactions
 2. **Create Wallet and Transactions**: 
    - Navigate to `Create Wallet` to generate a new wallet.
    - Go to `Create Transaction` to initiate transactions between wallets.
@@ -94,6 +94,8 @@ Once the client and server are running:
 
 4. **Manage Pending Transactions**: After creating a transaction, it will appear in the pending transactions list.
 5. **Mine Transactions**: Choose a miner address and start mining to validate and confirm pending transactions.
+6. **View Block**: View the entire mined block by clicking on a block in the blockchain view.
+7. **View Wallet Details**: Click on a wallet address to view its balance and transactions.
 
 ## Contributing
 
