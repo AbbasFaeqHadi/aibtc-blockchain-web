@@ -1,6 +1,6 @@
 # AIBTC Blockchain Platform
 
-Decentralized blockchain platform with peer-to-peer networking, transaction validation, Merkle Tree integration, wallet management, and real-time block mining.
+Blockchain platform with transaction validation, Merkle Tree integration, wallet management, and block mining.
 
 <p align="center">
   <img src="client/src/assets/logo.svg" alt="AIBTC Logo" width="150"/>
